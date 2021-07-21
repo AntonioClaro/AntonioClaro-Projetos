@@ -1,0 +1,362 @@
+ class setElements{
+        constructor(){
+
+        }
+
+        boxes(){
+            let label = document.createElement('label');
+            label.setAttribute('style','padding-right: 5px; padding-left: 20px');
+            label.innerHTML = 'Categories: ';
+            let label1 = document.createElement('label');
+            label1.setAttribute('style','padding-right: 5px; padding-left: 20px');
+            label1.innerHTML = 'Products: ';
+            let label2 = document.createElement('label');
+            label2.setAttribute('style','padding-right: 5px; padding-left: 20px');
+
+
+            let main = document.createElement('select');
+            let sub1 = document.createElement('select');
+            let sub2 = document.createElement('select');
+
+            function optMain(){
+                let food = document.createElement('option');
+                food.setAttribute('value','food');
+                food.innerHTML = 'Foods';
+
+                let clothes = document.createElement('option');
+                clothes.setAttribute('value','clothes');
+                clothes.innerHTML = 'Clothes';
+
+                main.append(food,clothes);
+            }
+
+            function optSub1Food(){
+                label2.innerHTML = 'Type: ';
+
+                let fruits = document.createElement('option');
+                fruits.setAttribute('value','fruits');
+                fruits.innerHTML = 'Fruits';
+
+                let vegetables = document.createElement('option');
+                vegetables.setAttribute('value','vegetables');
+                vegetables.innerHTML = 'Vegetables';
+
+                sub1.innerHTML="";
+                sub1.append(fruits,vegetables);
+                
+            }
+
+            function optSub1Clothes(){
+                label2.innerHTML = 'Brand: ';
+
+                let shirts = document.createElement('option');
+                shirts.setAttribute('value','shirts');
+                shirts.innerHTML = 'Shirts';
+
+                let pants = document.createElement('option');
+                pants.setAttribute('value','pants');
+                pants.innerHTML = 'Pants';
+
+                sub1.innerHTML = "";
+                sub1.append(shirts,pants);
+            }
+
+            function optSub2Fruits(){
+                let banana = document.createElement('option');
+                banana.setAttribute('value','banana');
+                banana.innerHTML = 'Banana';
+
+                let apple = document.createElement('option');
+                apple.setAttribute('value','apple');
+                apple.innerHTML = 'Apple';
+
+                let orange = document.createElement('option');
+                orange.setAttribute('value','orange');
+                orange.innerHTML = 'Orange';
+
+                sub2.innerHTML = "";
+                sub2.append(banana,apple,orange);
+            }
+
+            function optSub2Vegetables(){
+                let lettuce = document.createElement('option');
+                lettuce.setAttribute('value','lettuce');
+                lettuce.innerHTML = 'Lettuce';
+
+                let rice = document.createElement('option');
+                rice.setAttribute('value','rice');
+                rice.innerHTML = 'Rice';
+
+                let carrot = document.createElement('option');
+                carrot.setAttribute('value','carrot');
+                carrot.innerHTML = 'Carrot';
+
+                sub2.innerHTML = "";
+                sub2.append(lettuce,rice,carrot);
+            }
+
+            function optSub2Shirts(){
+                let everlane = document.createElement('option');
+                everlane.setAttribute('value','everlane');
+                everlane.innerHTML = 'Everlane';
+
+                let carhartt = document.createElement('option');
+                carhartt.setAttribute('value','carhartt');
+                carhartt.innerHTML = 'Carhartt';
+
+                let brooklinen = document.createElement('option');
+                brooklinen.setAttribute('value','brooklinen');
+                brooklinen.innerHTML = 'Brooklinen';
+
+                sub2.innerHTML = "";
+                sub2.append(everlane,carhartt,brooklinen);
+            }
+
+            function optSub2Pants(){
+                let leeJeans = document.createElement('option');
+                leeJeans.setAttribute('value','leeJeans');
+                leeJeans.innerHTML = 'Lee Jeans';
+
+                let calvinKlein = document.createElement('option');
+                calvinKlein.setAttribute('value','calvinKlein');
+                calvinKlein.innerHTML = 'Calvin Klein';
+
+                let wrangler = document.createElement('option');
+                wrangler.setAttribute('value','wrangler');
+                wrangler.innerHTML = 'Wrangler';
+
+                sub2.innerHTML = "";
+                sub2.append(leeJeans,calvinKlein,wrangler);
+            }
+
+            optMain();
+            optSub1Food();
+            optSub2Fruits();
+            document.body.append(label,main,label1,sub1,label2,sub2);
+
+            main.addEventListener('change',function (){
+                
+                if(main.value==='food'){
+                    optSub1Food();
+                    optSub2Fruits();
+                    
+                    
+                }
+                if(main.value==='clothes'){
+                    optSub1Clothes();
+                    optSub2Shirts();
+                    
+                }
+            })
+
+            sub1.addEventListener('change',function (){
+                
+                if(sub1.value=='fruits'){
+                    optSub2Fruits();
+                    
+                }
+                if(sub1.value=='vegetables'){
+                    optSub2Vegetables();
+                    
+                }
+                if(sub1.value=='shirts'){
+                    optSub2Shirts();
+                    
+                }
+                if(sub1.value=='pants'){
+                    optSub2Pants();
+                    
+                }
+            })
+        }
+    }
+
+
+        class setGraphics{
+            constructor(){
+
+            }
+        
+        graphics(){
+            let cv = document.getElementsByTagName('canvas')[0];
+            cv.setAttribute('style','background-color: cyan');
+
+
+            let sub = document.getElementsByTagName('select')[0];
+            let sub1 = document.getElementsByTagName('select')[1];
+            let sub2 = document.getElementsByTagName('select')[2];
+
+            
+
+            let jan = cv.getContext('2d');
+            let feb = cv.getContext('2d');
+            let mar = cv.getContext('2d');
+            let apr = cv.getContext('2d');
+
+            function clear(){
+                jan.clearRect(0,0,cv.width,cv.height);
+                feb.clearRect(0,0,cv.width,cv.height);
+                mar.clearRect(0,0,cv.width,cv.height);
+                apr.clearRect(0,0,cv.width,cv.height);
+            }
+
+            function gBanana(){
+                clear();
+                jan.fillRect(20,250,220,550);
+                feb.fillRect(320,400,220,400);
+                mar.fillRect(620,350,220,450);
+                apr.fillRect(920,600,220,200);
+            }
+
+
+            function gApple(){
+                clear();
+                jan.fillRect(20,550,220,250);
+                feb.fillRect(320,450,220,350);
+                mar.fillRect(620,150,220,650);
+                apr.fillRect(920,350,220,450);
+            }
+
+            function gOrange(){
+                clear();
+                jan.fillRect(20,500,220,300);
+                feb.fillRect(320,550,220,250);
+                mar.fillRect(620,200,220,600);
+                apr.fillRect(920,450,220,350);
+            }
+
+            function gLettuce(){
+                clear();
+                jan.fillRect(20,150,220,650);
+                feb.fillRect(320,300,220,500);
+                mar.fillRect(620,250,220,550);
+                apr.fillRect(920,400,220,40);
+            }
+
+            function gRice(){
+                clear();
+                jan.fillRect(20,500,220,300);
+                feb.fillRect(320,450,220,3500);
+                mar.fillRect(620,100,220,700);
+                apr.fillRect(920,50,220,750);
+            }
+
+            function gCarrot(){
+                clear();
+                jan.fillRect(20,250,220,550);
+                feb.fillRect(320,350,220,450);
+                mar.fillRect(620,400,220,400);
+                apr.fillRect(920,300,220,300);
+            }
+
+            function gEverlane(){
+                clear();
+                jan.fillRect(20,300,220,500);
+                feb.fillRect(320,650,220,150);
+                mar.fillRect(620,200,220,600);
+                apr.fillRect(920,250,220,550);
+            }
+
+            function gCarhartt(){
+                clear();
+                jan.fillRect(20,700,220,100);
+                feb.fillRect(320,400,220,400);
+                mar.fillRect(620,600,220,200);
+                apr.fillRect(920,250,220,550);
+            }
+
+            function gBrooklinen(){
+                clear();
+                jan.fillRect(20,450,220,350);
+                feb.fillRect(320,200,220,600);
+                mar.fillRect(620,650,220,150);
+                apr.fillRect(920,400,220,400);
+            }
+
+            function gLeeJeans(){
+                clear();
+                jan.fillRect(20,350,220,450);
+                feb.fillRect(320,500,220,300);
+                mar.fillRect(620,150,220,650);
+                apr.fillRect(920,200,220,600);
+            }
+
+            function gCalvinKlein(){
+                clear();
+                jan.fillRect(20,150,220,650);
+                feb.fillRect(320,300,220,500);
+                mar.fillRect(620,600,220,200);
+                apr.fillRect(920,650,220,150);
+            }
+
+            function gWrangler(){
+                clear();
+                jan.fillRect(20,700,220,100);
+                feb.fillRect(320,200,220,600);
+                mar.fillRect(620,500,220,300);
+                apr.fillRect(920,450,220,350);
+            }
+
+            sub.addEventListener('change',graphicChanger);
+            sub1.addEventListener('change',graphicChanger);
+            sub2.addEventListener('change',graphicChanger);
+            graphicChanger();
+
+            function graphicChanger(){
+                
+                switch(sub2.value){
+                    case 'banana':
+                        gBanana();
+                        break;
+                    case 'apple':
+                        gApple();
+                        break;
+                    case 'orange':
+                        gOrange();
+                        break;
+                    case 'lettuce':
+                        gLettuce();
+                        break;
+                    case 'rice':
+                        gRice();
+                        break;
+                    case 'carrot':
+                        gCarrot();
+                        break;
+                    case 'everlane':
+                        gEverlane();
+                        break;
+                    case 'carhartt':
+                        gCarhartt();
+                        break;
+                    case 'brooklinen':
+                        gBrooklinen();
+                        break;
+                    case 'leeJeans':
+                        gLeeJeans();
+                        break;
+                    case 'calvinKlein':
+                        gCalvinKlein();
+                        break;
+                    case 'wrangler':
+                        gWrangler();
+                        break;
+                }
+                console.log(sub2.value)
+            }
+            
+        }
+    }
+
+
+
+    let x = new setElements();
+    x.boxes();
+
+    let canvas = document.createElement('canvas');
+    canvas.setAttribute('width','1200');
+    canvas.setAttribute('height','800');
+    document.body.appendChild(canvas);
+
+    let y = new setGraphics();
+    y.graphics();
