@@ -1,0 +1,4 @@
+1º Passo: Selecione exatamente 16 lutadores pelas caixas de seleção ao lado esquedo dos nomes.
+2º Passo: Clique com o botão esquerdo do mouse no botão "Iniciar" na parte superior esquerda da janela.
+
+OBS: Caso o numero de lutadores selecionados sejam diferentes de 16, uma janela de erro aparecerá dizendo que não foi possivel iniciar o torneio e explicando a razão.
