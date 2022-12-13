@@ -1,0 +1,17 @@
+Resposta para Questão 1: 91
+
+Resposta para Questão 2 com o numero 34: Sim
+
+Resposta para Questão 3:
+  Menor valor de faturamento ocorrido em um dia do mês: 373.7838
+  Maior valor de faturamento ocorrido em um dia do mês: 48924.2448
+  Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: 10
+
+Resposta para Questão 4:
+  Percentual SP: 37,53%
+  Percentual RJ: 20,29%
+  Percentual MG: 16,17%
+  Percentual ES: 15,03%
+  Percentual OUTROS: 10,98%
+
+Resposta para Questão 5 com a palavra abcde: edcba
