@@ -1,0 +1,17 @@
+1 - Importe o arquivo sql para alguma ferramenta de banco de dados sql (como o Mysql Workbench).
+
+2 - Abra a pasta 'TGID_Teste' com algum IDE de programação, como o NetBeans, e então rode o projeto.
+
+Lista de CPFs (Marque a opção 'Cliente' na tela de Login):
+135.698.122-3
+335.876.214-8
+456.889.434-7
+670.081.449-3
+458.323.199-4
+
+Lista de CNPJs (Marque a opção 'Empresa' na tela de Login):
+31.568.143/0001-78
+24.891.448/0002-11
+41.785.993/0001-49
+
+Todas as senhas são 1234
